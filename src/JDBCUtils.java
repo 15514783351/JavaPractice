@@ -1,5 +1,6 @@
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
 import java.util.Properties;
 
@@ -22,8 +23,14 @@ public class JDBCUtils {
         try {
             // 1. 创建Properties集合类
             Properties pro = new Properties();
+            // 获取src路劲下的文件的方事---》ClassLoader类加载器
+            ClassLoader classLoader = JDBCUtils.class.getClassLoader();
+            URL resource = classLoader.getResource("jdbc.properties");
+            String path = resource.getPath();
+            System.out.println(path);
+
             // 2. 加载文件
-            pro.load(new FileReader("src\\jdbc.properties"));
+            pro.load(new FileReader(path));
             // 3. 获取数据 赋值
             url = pro.getProperty("url");
             user = pro.getProperty("user");
