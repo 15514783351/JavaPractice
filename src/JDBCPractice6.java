@@ -35,7 +35,7 @@ public class JDBCPractice6 {
         try {
             conn = JDBCUtils.getConnection();
             // 2 定义sql
-            String sql = "select * from user where name = '"+username+"' and password = '"+password+"';";
+            String sql = "select * from user where name = '"+username+"' and password = '"+password+"'";
             stmt = conn.createStatement();
             resultSet = stmt.executeQuery(sql);
             return resultSet.next();
@@ -56,7 +56,7 @@ public class JDBCPractice6 {
 
         JDBCPractice6 jdbcPractice6 = new JDBCPractice6();
         boolean flag = jdbcPractice6.login(username, password);
-        if (flag) System.out.println("登陆失败");
+        if (flag) System.out.println("登陆成功");
         else System.out.println("登陆失败");
     }
 }
