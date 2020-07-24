@@ -19,11 +19,15 @@ public class c3p0Practice1 {
 //        Class.forName("com.mysql.cj.jdbc.Driver");
         // 1 创建数据库连接池对象
         ComboPooledDataSource ds = new ComboPooledDataSource();
-        // 2 获取连接对象
-        Connection conn = ds.getConnection();
+        for (int i = 0; i < 10; i++) {
+            // 2 获取连接对象
+            Connection conn = ds.getConnection();
 
-        // 3 打印
-        System.out.println(conn);
+            // 3 打印
+
+            System.out.println(i + "" + conn);
+        }
+
 
     }
 }
