@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+<!--form: 用于定义表单。可以定义一个范围：范围表示采集用户数据的范围
+属性
+    action：指定提交用户的url
+    method：指定提交方式
+        分类：
+            get：
+                1. 请求参数会在地址栏中显示
+                2. 请求参数大小是有限制的
+                3. 不太安全
+            post：
+                1. 请求参数不会在地址栏中显示，会封装在请求体中（后面再说）
+                2. 请求参数大小没限制
+                3. 比较安全
+    表单项中的数据要想被提交：必须指定那么属性
+
+    表单项标签:
+        input: 可以通过type属性值，改变元素展示的样式
+            type属性
+                text:文本输入框
+                password:密码输入框
+                radio:单选框 若想实现多个单选选中一个   username必须一致
+                        用value表示提交的值
+                checkbox:复选框
+        label:指定输入项的蚊子描述信息
+            注意：
+                label的佛如属性一般回合input的id属性值对应.如果对应
+        select：下拉列表
+        textarea:文本域
+    -->
+<form action="#" method="get">
+    <label for="username">用户名： </label> <input type="text" name="username" placeholder="用户名" id="username"><br>
+    密码：<input type="password" name="password"><br>
+    性别：<input type="radio" name="gender" value="man" checked="checked"> man <input type="radio" name="gender" value="women"> women <br>
+    爱好：<input type="checkbox" name="hobby" value="音乐"> 音乐
+    <input type="checkbox" name="hobby" value="电影"> 电影
+    <input type="checkbox" name="hobby" value="篮球"> 篮球 <br>
+    <input type="submit" value="登录">
+</form>
+
+</body>
+</html>
