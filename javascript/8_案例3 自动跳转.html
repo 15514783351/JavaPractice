@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转</title>
+    <style>
+        #loca{
+            text-align: center;
+        }
+        #time{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<p id="loca">
+    <span id="time">5</span> 秒之后，自动跳转到首页...
+</p>
+
+<script>
+    var second = 5;
+    function showTime() {
+        if (second <= 0) {
+            location.href = "https://www.baidu.com";
+        }
+        var time = document.getElementById("time");
+        time.innerHTML = second;
+        second--;
+    }
+
+    setInterval(showTime, 1000);
+</script>
+
+</body>
+</html>
