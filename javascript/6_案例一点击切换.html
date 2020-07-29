@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例一</title>
+</head>
+<body>
+
+<img src="../htmlpractice/image/image_1.jpg" id="light">
+<script>
+    /**
+     * 分析
+     * 1. 获取对象
+     * 2. 绑定单击事件
+     * 3. 每次点击切换
+     *  规则
+     *      如果点击了on， 切换位off
+     *      如果位off，切换位on
+     *     使用flag来标记
+     *
+     */
+    // 1 获取图片对象
+    var light = document.getElementById("light");
+    // 2 绑定单击事件
+    var flag = false;
+    light.onclick = function () {
+        if (flag) {
+            light.src = "../htmlpractice/image/image_1.jpg";
+            flag = false;
+        } else {
+            light.src = "../htmlpractice/image/background.png";
+            flag = true;
+        }
+    }
+</script>
+
+</body>
+</html>
