@@ -7,6 +7,9 @@
 <body>
 
 <img src="../htmlpractice/image/image_1.jpg" id="light">
+<input type="submit" value="打开窗口" id="open">
+<input type="submit" value="关闭窗口" id="close">
+
 <script>
     /**
      * 分析
@@ -32,7 +35,23 @@
             flag = true;
         }
     }
+
+
+    // 打开百度首页
+    var btnopen = document.getElementById("open");
+    var newWindow;
+    btnopen.onclick = function(){
+        newWindow = open("https://www.baidu.com");
+    }
+    // 关闭刚打开的
+    var btnclose = document.getElementById("close");
+    btnclose.onclick = function () {
+        newWindow.close();
+    }
 </script>
+
+
+
 
 </body>
 </html>
